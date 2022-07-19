@@ -1,5 +1,3 @@
-
-
 class BasePage:
     def __int__(self, browser, url):
         self.browser = browser
