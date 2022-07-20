@@ -10,7 +10,6 @@ class ProductPage(BasePage):
         self.solve_quiz_and_get_code()
         self.should_be_success_add_alert()
         self.should_be_basket_price_equal_to_product_price()
-        time.sleep(0)
 
     def should_be_add_to_basket_button(self):
         assert self.is_element_present(*ProductPageLocators.ADD_TO_BASKET_BUTTON)
@@ -26,9 +25,11 @@ class ProductPage(BasePage):
 
     def should_be_basket_price_equal_to_product_price(self):
         basket_price_text = self.browser.find_element(*ProductPageLocators.BASKET_PRICE).text.split('\n')[0]
-        basket_price = re.search(r"\d+,\d+", basket_price_text)[0]
         product_price_text = self.browser.find_element(*ProductPageLocators.PRICE).text
-        product_price = re.search(r"\d+,\d+", product_price_text)[0]
+        print(basket_price_text)
+        print(product_price_text)
+        basket_price = re.search(r"\d+[.,]\d+", basket_price_text)[0]
+        product_price = re.search(r"\d+[.,]\d+", product_price_text)[0]
         assert product_price == basket_price, \
             f"Basket total price not equals to product price: product: {product_price}, basket: {basket_price}"
 

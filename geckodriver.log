@@ -1,0 +1,49 @@
+1658318561633	geckodriver	INFO	Listening on 127.0.0.1:58252
+1658318564721	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "58253" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\dani4\\AppData\\Local\\Temp\\rust_mozprofilegbzpVm"
+1658318565251	Marionette	INFO	Marionette enabled
+1658318565259	Marionette	INFO	Listening on port 58263
+WebDriver BiDi listening on ws://localhost:58253
+Read port: 58263
+1658318565444	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\dani4\\AppData\\Local\\Temp\\rust_mozprofilegbzpVm\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:58253/devtools/browser/e04bb424-966f-48d1-98dc-af3833bfcbfd
+JavaScript warning: http://p.2ad.wtf/ad/base.js?id=4d305e1f79c76a7cb6bf191232894784098b&rid=ADrei6XOlqwhqwbqX939LcJnhYE&reg=22&referer=http%3A%2F%2Fselenium1py.pythonanywhere.com%2Fru%2Faccounts%2Flogin%2F, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: http://selenium1py.pythonanywhere.com/ru/accounts/login/, line 624: ReferenceError: oscar is not defined
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://selenium1py.pythonanywhere.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://selenium1py.pythonanywhere.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://selenium1py.pythonanywhere.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+JavaScript error: http://selenium1py.pythonanywhere.com/static/oscar/js/oscar/hack.358de0d3d185.js, line 117: TypeError: document.getElementById(...) is null
+JavaScript error: http://selenium1py.pythonanywhere.com/ru/accounts/login/, line 209: ReferenceError: oscar is not defined
+1658318584423	Marionette	INFO	Stopped listening on port 58263
+Marionette threw an error: TypeError: browsingContext.currentWindowGlobal is null
+getMarionetteCommandsActorProxy/get/<@chrome://remote/content/marionette/actors/MarionetteCommandsParent.jsm:332:29
+
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1658318643468	geckodriver	INFO	Listening on 127.0.0.1:58377
+1658318646546	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "58378" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\dani4\\AppData\\Local\\Temp\\rust_mozprofileSuhlF9"
+1658318646977	Marionette	INFO	Marionette enabled
+1658318646982	Marionette	INFO	Listening on port 58389
+WebDriver BiDi listening on ws://localhost:58378
+Read port: 58389
+1658318647132	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\dani4\\AppData\\Local\\Temp\\rust_mozprofileSuhlF9\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:58378/devtools/browser/b28a7cd1-cea5-4923-bc6e-c85ece501b1a
+JavaScript warning: http://p.2ad.wtf/ad/base.js?id=4d305e1f79c76a7cb6bf191232894784098b&rid=MiwXAAQPEFLISeT2hjwiVx93YU0&reg=22&referer=http%3A%2F%2Fselenium1py.pythonanywhere.com%2Fru%2Faccounts%2Flogin%2F, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: http://selenium1py.pythonanywhere.com/ru/accounts/login/, line 624: ReferenceError: oscar is not defined
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://selenium1py.pythonanywhere.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://selenium1py.pythonanywhere.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://selenium1py.pythonanywhere.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1658318667629	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/, line 634: ReferenceError: oscar is not defined
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://selenium1py.pythonanywhere.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://selenium1py.pythonanywhere.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+JavaScript error: http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/, line 738: ReferenceError: oscar is not defined
+1658318671897	Marionette	INFO	Stopped listening on port 58389

@@ -1,3 +1,8 @@
+import time
+
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
+
 from .base_page import BasePage
 from .locators import LoginPageLocators
 
@@ -31,8 +36,11 @@ class LoginPage(BasePage):
         password_form_2 = self.browser.find_element(*LoginPageLocators.PASSWORD_FORM_2)
         password_form_2.send_keys(password)
         register_btn = self.browser.find_element(*LoginPageLocators.REGISTER_BUTTON)
+        print(register_btn)
+        time.sleep(5)
+        # здесь стоит таймаут, т.к. в момент написания у меня были большие проблемы с интернетом и на сайте
+        # выдавало ошибку с сообщением о том, что это проблема на их стороне и эта ошибка была ими помечена
         register_btn.click()
 
-        self.should_be_success_register_message()
-
+        self.should_be_authorized_user()
 
