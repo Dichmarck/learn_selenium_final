@@ -8,8 +8,9 @@ class ProductPage(BasePage):
         self.should_be_add_to_basket_button()
         self.click_on_add_to_basket_button()
         self.solve_quiz_and_get_code()
+        self.should_be_success_add_alert()
         self.should_be_basket_price_equal_to_product_price()
-        time.sleep(1200)
+        time.sleep(0)
 
     def should_be_add_to_basket_button(self):
         self.is_elemet_present(*ProductPageLocators.ADD_TO_BASKET_BUTTON)
@@ -17,14 +18,19 @@ class ProductPage(BasePage):
     def click_on_add_to_basket_button(self):
         self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET_BUTTON).click()
 
-    def should_be_succes_add_alert(self):
-        pass
+    def should_be_success_add_alert(self):
+        success_alert = self.browser.find_element(*ProductPageLocators.SUCCESS_ADD_ALERT).text
+        product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text
+        assert success_alert == product_name + " has been added to your basket.", \
+            "Product name in basket not equals to actual product name"
+
 
     def should_be_basket_price_equal_to_product_price(self):
-        product_price_text = self.browser.find_element(*ProductPageLocators.BASKET_PRICE).text
-        basket_price_text = self.browser.find_element(*ProductPageLocators.BASKET_PRICE).text
-        print(product_price_text)
-        print(basket_price_text)
+        basket_price_text = self.browser.find_element(*ProductPageLocators.BASKET_PRICE).text.split('\n')[0].split(' ')[2]
+        product_price_text = self.browser.find_element(*ProductPageLocators.PRICE).text
+        assert basket_price_text == product_price_text, "Basket total price not equals to product price"
+
+
 
 
 # cd learn_selenium_final

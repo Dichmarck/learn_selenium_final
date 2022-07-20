@@ -15,4 +15,4 @@ class ProductPageLocators:
     PRICE = (By.CSS_SELECTOR, "p.price_color")
     ADD_TO_BASKET_BUTTON = (By.CSS_SELECTOR, ".btn.btn-lg.btn-primary.btn-add-to-basket")
     BASKET_PRICE = (By.CSS_SELECTOR, ".basket-mini.pull-right.hidden-xs")
-    SUCCESS_ADD_ALRT = (By.CSS_SELECTOR, "div.alertinner strong")
+    SUCCESS_ADD_ALERT = (By.XPATH, "//div[contains(@class, 'alertinner')]")
