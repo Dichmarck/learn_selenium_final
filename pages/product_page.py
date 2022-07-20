@@ -1,4 +1,4 @@
-import time
+import time, re
 from learn_selenium_final.pages.base_page import BasePage
 from learn_selenium_final.pages.locators import ProductPageLocators
 
@@ -21,13 +21,16 @@ class ProductPage(BasePage):
     def should_be_success_add_alert(self):
         success_alert = self.browser.find_element(*ProductPageLocators.SUCCESS_ADD_ALERT).text.strip()
         product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text.strip()
-        assert product_name + " has been added to your basket." in success_alert, \
-            "Product name in basket not equals to actual product name"
+        assert product_name in success_alert, \
+            "Product name in basket not equals to actual product name:"
 
     def should_be_basket_price_equal_to_product_price(self):
-        basket_price_text = self.browser.find_element(*ProductPageLocators.BASKET_PRICE).text.split('\n')[0].split(' ')[2]
+        basket_price_text = self.browser.find_element(*ProductPageLocators.BASKET_PRICE).text.split('\n')[0]
+        basket_price = re.search(r"\d+,\d+", basket_price_text)[0]
         product_price_text = self.browser.find_element(*ProductPageLocators.PRICE).text
-        assert basket_price_text == product_price_text, "Basket total price not equals to product price"
+        product_price = re.search(r"\d+,\d+", product_price_text)[0]
+        assert product_price == basket_price, \
+            f"Basket total price not equals to product price: product: {product_price}, basket: {basket_price}"
 
     def should_not_be_success_message(self):
         assert self.is_not_element_present(*ProductPageLocators.SUCCESS_ADD_ALERT), \
