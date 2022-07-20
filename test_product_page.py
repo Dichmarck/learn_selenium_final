@@ -1,4 +1,7 @@
 import pytest
+
+from learn_selenium_final.pages.basket_page import BasketPage
+from learn_selenium_final.pages.main_page import MainPage
 from learn_selenium_final.pages.product_page import ProductPage
 
 @pytest.mark.skip
@@ -34,7 +37,7 @@ def test_guest_cant_see_success_message(browser):
     page.open()
     page.should_not_be_success_message()
 
-@pytest.mark.skip
+
 def test_message_disappeared_after_adding_product_to_basket(browser):
     link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
     page = ProductPage(browser, link)
@@ -56,3 +59,13 @@ def test_guest_can_go_to_login_page_from_product_page (browser):
     page.open()
     page.go_to_login_page()
 
+
+@pytest.mark.new_test
+def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
+    link = "http://selenium1py.pythonanywhere.com/"
+    page = ProductPage(browser, link)
+    page.open()
+    page.go_to_basket_page()
+    basket_page = BasketPage(page.browser, page.browser.current_url)
+    basket_page.should_not_be_products_in_basket()
+    basket_page.should_be_continue_shopping_link()
