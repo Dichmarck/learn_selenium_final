@@ -2,8 +2,8 @@ import pytest
 import time
 from learn_selenium_final.pages.basket_page import BasketPage
 from learn_selenium_final.pages.login_page import LoginPage
-from learn_selenium_final.pages.main_page import MainPage
 from learn_selenium_final.pages.product_page import ProductPage
+
 
 @pytest.mark.add_to_basket_autorized
 class TestUserAddToBasketFromProductPage:
@@ -11,12 +11,11 @@ class TestUserAddToBasketFromProductPage:
     @pytest.fixture(scope="function", autouse=True)
     def setup(self, browser):
         register_url = "http://selenium1py.pythonanywhere.com/accounts/login/"
-        #browser.delete_all_cookies()
+        # browser.delete_all_cookies()
         page = LoginPage(browser, register_url)
         page.open()
-        page.register_new_user(str(time.time())+"@mail.ru", "somepassword")
+        page.register_new_user(str(time.time()) + "@mail.ru", "somepassword")
         page.should_be_authorized_user()
-
 
     def test_user_cant_see_success_message(self, browser):
         link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
@@ -41,7 +40,7 @@ def test_guest_can_add_product_to_basket(browser):
 
 
 @pytest.mark.need_review
-def test_guest_can_go_to_login_page_from_product_page (browser):
+def test_guest_can_go_to_login_page_from_product_page(browser):
     link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
     page = ProductPage(browser, link)
     page.open()
@@ -82,6 +81,3 @@ def test_guest_should_see_login_link_on_product_page(browser):
     page = ProductPage(browser, link)
     page.open()
     page.should_be_login_link()
-
-
-

@@ -1,8 +1,4 @@
 import time
-
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.wait import WebDriverWait
-
 from .base_page import BasePage
 from .locators import LoginPageLocators
 
@@ -43,4 +39,3 @@ class LoginPage(BasePage):
         register_btn.click()
 
         self.should_be_authorized_user()
-

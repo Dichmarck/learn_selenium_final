@@ -1,7 +1,6 @@
-from selenium.webdriver.common.by import By
-from .pages.locators import MainPageLocators
 from .pages.login_page import LoginPage
 from .pages.main_page import *
+
 
 @pytest.mark.login_guest
 class TestLoginFromMainPage:

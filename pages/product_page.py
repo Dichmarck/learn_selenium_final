@@ -26,8 +26,6 @@ class ProductPage(BasePage):
     def should_be_basket_price_equal_to_product_price(self):
         basket_price_text = self.browser.find_element(*ProductPageLocators.BASKET_PRICE).text.split('\n')[0]
         product_price_text = self.browser.find_element(*ProductPageLocators.PRICE).text
-        print(basket_price_text)
-        print(product_price_text)
         basket_price = re.search(r"\d+[.,]\d+", basket_price_text)[0]
         product_price = re.search(r"\d+[.,]\d+", product_price_text)[0]
         assert product_price == basket_price, \
@@ -40,7 +38,6 @@ class ProductPage(BasePage):
     def should_disappear_success_message(self):
         assert self.is_disappeared(*ProductPageLocators.SUCCESS_ADD_ALERT), \
             "Success message didn't disappeared, but it should to"
-
 
 # cd learn_selenium_final
 # pytest -s -v --tb=line --language=ru test_product_page.py

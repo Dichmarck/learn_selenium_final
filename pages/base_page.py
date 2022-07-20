@@ -1,6 +1,5 @@
 import math
 from selenium.common import NoSuchElementException, NoAlertPresentException, TimeoutException
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
@@ -18,7 +17,7 @@ class BasePage:
 
     def is_element_present(self, how, what):
         try:
-            self.browser.find_element(how, what)
+            WebDriverWait(self.browser, 15).until(EC.presence_of_element_located((how, what)))
         except NoSuchElementException:
             return False
         return True
@@ -37,7 +36,7 @@ class BasePage:
                 alert.accept()
             except NoAlertPresentException:
                 print("No second alert presented")
-        except Exception:
+        except NoAlertPresentException:
             pass
 
     def is_not_element_present(self, how, what, timeout=4):
@@ -72,6 +71,3 @@ class BasePage:
     def should_be_authorized_user(self):
         assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
                                                                      " probably unauthorised user"
-
-
-
